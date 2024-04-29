@@ -2,7 +2,7 @@
 FROM python:3.12-slim AS backend
 
 # Set working directory
-WORKDIR /app/backend
+WORKDIR /app
 
 # Copy requirements file and install dependencies
 COPY requirements.txt ./
@@ -10,6 +10,9 @@ RUN pip install -r requirements.txt
 
 # Copy backend project code
 COPY . .
+
+# Apply model to database
+RUN python manage.py migrate
 
 # Expose Django port
 EXPOSE 80
