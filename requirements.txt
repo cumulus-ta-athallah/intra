@@ -1,6 +1,7 @@
 django
-django-environ
 djangorestframework
+django-environ
+django-cors-headers
 gunicorn
 whitenoise
 psycopg2-binary
