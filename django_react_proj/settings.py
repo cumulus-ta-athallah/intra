@@ -38,7 +38,7 @@ ALLOWED_HOSTS = ['*']
 # Automatically determine environment by detecting if DATABASE_URL variable.
 # DATABASE_URL is provided by Heroku if a database add-on is added
 # (e.g. Heroku Postgres).
-DB_HOST = env('DB_HOST')
+DATABASE_URL = env('DB_HOST')
 
 # Application definition
 
@@ -99,7 +99,7 @@ DATABASES = {
     }
 }
 
-if DB_HOST:
+if DATABASE_URL:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
