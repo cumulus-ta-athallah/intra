@@ -38,7 +38,7 @@ ALLOWED_HOSTS = ['*']
 # Automatically determine environment by detecting if DATABASE_URL variable.
 # DATABASE_URL is provided by Heroku if a database add-on is added
 # (e.g. Heroku Postgres).
-DATABASE_URL = env('DB_HOST')
+DATABASE_URL = env.bool('DB_HOST', False)
 
 # Application definition
 
